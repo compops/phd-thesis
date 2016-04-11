@@ -9,7 +9,7 @@ The thesis is available as full-text from < http://www.johandahlin.com/publicati
 
 The code is written and tested for R 3.2.2 and Python 2.7.6 with some additional libraries/packages (see below).
 
-The implementation in Pyhton makes use of NumPy 1.9.2, SciPy 0.15.1, Matplotlib 1.4.3 and Pandas 0.13.1. On Ubuntu, these packages can be installed/upgraded using "sudo pip install --upgrade package-name ".
+The implementation in Python makes use of NumPy 1.9.2, SciPy 0.15.1, Matplotlib 1.4.3 and Pandas 0.13.1. On Ubuntu, these packages can be installed/upgraded using "sudo pip install --upgrade package-name ".
 
 The implementation in R makes use of the package MCMCPack and RColorBrewer. They can be installed by the command "install.packages(c("MCMCPack","RColorBrewer"))". The implementation in Python makes use of NumPy 1.7.1, SciPy 0.12.0, Matplotlib 1.2.1 and Pandas. Please have these packages installed, on Ubuntu they can be installed using "sudo pip install --upgrade package-name ". See < https://www.quandl.com/tools/python > for more information.
 
