@@ -3,7 +3,7 @@ This code was downloaded from < https://github.com/compops/phd-thesis > and cont
 
 J. Dahlin, **Accelerating Monte Carlo methods for Bayesian inference in dynamical models**, Linköping studies in science and technology no. 1754, Linköping University, Sweden, 2016.
 
-The thesis is available as full-text from < http://research.johandahlin.com/files/phd-dahlin-thesis-final.pdf > and more information is available at < http://reserach.johandahlin.com/ >.
+The thesis is available as full-text from < http://research.johandahlin.com/files/phd-dahlin-thesis-final.pdf >.
 
 ## Dependencies
 
@@ -31,7 +31,7 @@ For (i), we make use of a zero mean function and a kernel consisting of a bias k
 
 For (ii), we make use of a state space model proposed by Langrock (2011) < http://www.tandfonline.com/doi/abs/10.1080/02664763.2011.573543 > given by 
 
-![equation](http://latex.codecogs.com/gif.latex?x_%7Bt&plus;1%7D%20%26%5Csim%20%5Cmathcal%7BN%7D%28x_%7Bt&plus;1%7D%3B%20%5Cphi%20x_t%2C%20%5Csigma%5E2_v%29%5C%5C%20y_t%20%26%5Csim%20%5Cmathcal%7BG%7D%28y_t%3B%20%5Calpha%2C%20%5Cbeta%20%5Cexp%28-x_t%29%29%2C)
+![equation](http://latex.codecogs.com/gif.latex?x_%7Bt&plus;1%7D%20%26%5Csim%20%5Cmathcal%7BN%7D%28x_%7Bt&plus;1%7D%3B%20%5Cphi%20x_t%2C%20%5Csigma%5E2_v%29%2C%20%5Cqquad%20y_t%20%26%5Csim%20%5Cmathcal%7BG%7D%28y_t%3B%20%5Calpha%2C%20%5Cbeta%20%5Cexp%28-x_t%29%29%2C)
 
 where ![equation](http://latex.codecogs.com/gif.latex?%5C%7B%5Cphi%2C%5Csigma_v%2C%5Calpha%2C%5Cbeta%5C%7D) denote the parameters. These are estimated using the particle Metropolis-Hastings algorithm by running the file **ex-icevarve-pmh0.py**, which also estimates the latent state by marginalising over the parameter posterior. The results are plotted using **ex-icevarve-plot.R**. Note that the folder **python-base** needs to be the current working directory for the Python code to work. This as many subroutines required for particle filtering and particle Metropolis-Hastings are provided in the folder.
 
