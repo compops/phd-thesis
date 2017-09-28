@@ -1,24 +1,37 @@
 # phd-thesis
 This code was downloaded from < https://github.com/compops/phd-thesis > and contains the code used to produce the results in the thesis:
 
-J. Dahlin, Accelerating Monte Carlo methods for Bayesian inference in dynamical models, Linköping studies in science and technology no. 1754, Linköping University, Sweden, 2016.
+J. Dahlin, **Accelerating Monte Carlo methods for Bayesian inference in dynamical models**, Linköping studies in science and technology no. 1754, Linköping University, Sweden, 2016.
 
-The thesis is available as full-text from < http://www.johandahlin.com/publications-files/phd-dahlin-thesis-final.pdf > and more information is available from < http://www.johandahlin.com/my-research/thesis/phd-thesis/ >.
+The thesis is available as full-text from < http://research.johandahlin.com/files/phd-dahlin-thesis-final.pdf > and more information is available at < http://reserach.johandahlin.com/ >.
 
 ## Dependencies
 
 The code is written and tested for R 3.2.2 and Python 2.7.6 with some additional libraries/packages (see below).
 
-The implementation in Python makes use of NumPy 1.9.2, SciPy 0.15.1, Matplotlib 1.4.3 and Pandas 0.13.1. On Ubuntu, these packages can be installed/upgraded using "sudo pip install --upgrade package-name ".
+The implementation in Python makes use of NumPy 1.9.2, SciPy 0.15.1, Matplotlib 1.4.3 and Pandas 0.13.1. On Ubuntu, these packages can be installed/upgraded using 
+```
+sudo pip install --upgrade package-name
+```
 
-The implementation in R makes use of the package MCMCPack and RColorBrewer. They can be installed by the command "install.packages(c("MCMCPack","RColorBrewer"))". The implementation in Python makes use of NumPy 1.7.1, SciPy 0.12.0, Matplotlib 1.2.1 and Pandas. Please have these packages installed, on Ubuntu they can be installed using "sudo pip install --upgrade package-name ". See < https://www.quandl.com/tools/python > for more information.
+The implementation in R makes use of the package MCMCPack and RColorBrewer. They can be installed by the command 
+``` R
+install.packages(c("MCMCPack","RColorBrewer"))
+```
+The implementation in Python makes use of NumPy 1.7.1, SciPy 0.12.0, Matplotlib 1.2.1 and Pandas. Please have these packages installed, on Ubuntu they can be installed using 
+``` R
+sudo pip install --upgrade package-name
+```
+See < https://www.quandl.com/tools/python > for more information.
 
 ## Example: Reconstructing the temperature of pre-historic Earth
 The code in the folder **example-icevarve** replicates the example in Section 1.1.1. Two different models are used: (i) a Gaussian process regression and (ii) a non-linear state space model SSM.
 
 For (i), we make use of a zero mean function and a kernel consisting of a bias kernel and a Matérn 5/2 kernel. The hyperparameters in the prior are hand-tuned and based on a run of empirical Bayes. The computations are carried out by **ex-icevarve-gp.py** and the plotting is done using **ex-icevarve-plot.R**. 
 
-For (ii), we make use of a state space model proposed by Langrock (2011) < http://www.tandfonline.com/doi/abs/10.1080/02664763.2011.573543 > given by x_{t+1} \sim \mathcal{N}(x_{t+1}; \phi x_t, \sigma^2_v), y_t \sim \mathcal{G}(y_t; \alpha, \beta \exp(-x_t)), where \{\phi,\sigma_v,\alpha,\beta\} denote the parameters. These are estimated using the particle Metropolis-Hastings algorithm by running the file **ex-icevarve-pmh0.py**, which also estimates the latent state by marginalising over the parameter posterior. The results are plotted using **ex-icevarve-plot.R**. Note that the folder **python-base** needs to be the current working directory for the Python code to work. This as many subroutines required for particle filtering and particle Metropolis-Hastings are provided in the folder.
+For (ii), we make use of a state space model proposed by Langrock (2011) < http://www.tandfonline.com/doi/abs/10.1080/02664763.2011.573543 > given by 
+![equation](http://latex.codecogs.com/gif.latex?x_%7Bt&plus;1%7D%20%26%5Csim%20%5Cmathcal%7BN%7D%28x_%7Bt&plus;1%7D%3B%20%5Cphi%20x_t%2C%20%5Csigma%5E2_v%29%5C%5C%20y_t%20%26%5Csim%20%5Cmathcal%7BG%7D%28y_t%3B%20%5Calpha%2C%20%5Cbeta%20%5Cexp%28-x_t%29%29%2C)
+where ![equation](http://latex.codecogs.com/gif.latex?%5C%7B%5Cphi%2C%5Csigma_v%2C%5Calpha%2C%5Cbeta%5C%7D) denote the parameters. These are estimated using the particle Metropolis-Hastings algorithm by running the file **ex-icevarve-pmh0.py**, which also estimates the latent state by marginalising over the parameter posterior. The results are plotted using **ex-icevarve-plot.R**. Note that the folder **python-base** needs to be the current working directory for the Python code to work. This as many subroutines required for particle filtering and particle Metropolis-Hastings are provided in the folder.
 
 ## Example: How does unemployment affect inflation?
 The code in the folder **example-philips** replicates the Phillips curve example introduced in Section 2.1 (Example 2.1) The data is collected by Statistics Sweden (http://www.scb.se/en_/) and consist of the monthly inflation rate (in percent) and unemployment rate (in percent of the total able-bodied population) during the period between 1987 and 2015. Note that the folder **python-base** needs to be the current working directory for the Python code to work. This as many subroutines required for particle filtering and particle Metropolis-Hastings are provided in the folder. To replicate the full example, run the files in the following order:
