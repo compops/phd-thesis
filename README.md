@@ -3,7 +3,7 @@ This code was downloaded from < https://github.com/compops/phd-thesis > and cont
 
 J. Dahlin, **Accelerating Monte Carlo methods for Bayesian inference in dynamical models**, Linköping studies in science and technology no. 1754, Linköping University, Sweden, 2016.
 
-The thesis is available as full-text from < http://research.johandahlin.com/files/phd-dahlin-thesis-final.pdf >.
+The thesis is available as full-text from < http://www.johandahlin.com/files/theses/dahlin-phdthesis.pdf >.
 
 ## Dependencies
 
